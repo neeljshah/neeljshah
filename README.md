@@ -28,7 +28,7 @@ I am a **Student at the University of Iowa** majoring in **Data Science** with a
 
 ## 🚀 Enterprise Business Analytics Portfolio
 
-### 🏢 [Unified Retail Intelligence Engine (The Mega-Project)](https://github.com/neeljshah/Enterprise-Revenue-Engine)
+### 🏢 [Unified Retail Intelligence Engine (https://github.com/neeljshah/Enterprise-Revenue-Engine)
 **Role:** Lead Analytics Architect | **Impact:** $1.7M Revenue Optimization Ecosystem
 *   **Predictive Forecasting:** Built a 90-day demand model using **Prophet**, achieving <8% MAPE and stabilizing inventory cycles.
 *   **Pricing Optimization:** Implemented **Log-Log Regression** to identify price-sensitive SKUs (Elasticity: -4.20), preventing margin erosion.
