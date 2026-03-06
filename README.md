@@ -1,68 +1,84 @@
-# 👋 Hi, I'm Neel Shah
+# 👋 Hi, I'm Neel Shah 
+### 🚀 Data Scientist | AI Engineer | Business Intelligence Lead | University of Iowa
 
-### 🚀 Data Scientist | AI Enthusiast | Business Analytics | Machine Learning | Deep Learning
+> **"I build end-to-end intelligence systems that translate raw data into multi-million dollar business and athletic advantages."**
 
-I'm a **Junior at the University of Iowa** majoring in **Data Science** with a minor in **Business Administration**. I have a strong passion for leveraging data and artificial intelligence to solve real-world problems. My projects span across **machine learning**, **deep learning**, and **business analytics**, where I focus on delivering data-driven insights and building scalable solutions.
-
----
-
-## 🔎 About Me
-
-- 🎓 **Education:** Data Science Major, Business Administration Minor | University of Iowa  
-- 🤖 **Passion:** AI, Machine Learning, Deep Learning, and Data Visualization  
-- 🏆 **Achievements:**  
-  - Developed a **Breast Cancer Prediction Model** with **97% accuracy** using Random Forest  
-  - Built a **Housing Price Prediction Model** with advanced feature engineering and regression analysis  
-  - Designed an **Image Classification Model** using **Convolutional Neural Networks (CNNs)** with 92% test accuracy  
-- 🌱 **Currently Learning:** Deep Learning (TensorFlow, PyTorch), Natural Language Processing (NLP)  
-- 💼 **Work Experience:**  
-  - **Fortrex Securities** - Developed and maintained a company website and online payment systems  
-  - Experience in fast-paced environments (Fast Food and Retail), enhancing teamwork and communication skills  
-- 🏅 **Leadership:** Eagle Scout, Tennis Captain, and Volunteer through **Club Kids for a Cause** and **Kesem Charity Development**
+I am a **Student at the University of Iowa** majoring in **Data Science** with a minor in **Business Administration**. My work is defined by the "Unified Intelligence" framework—creating autonomous systems where **Data Engineering**, **Predictive Modeling**, and **Generative AI** work together to solve high-stakes problems in global retail and elite sports.
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ Deep-Dive Tech Stack
 
-### **Languages:**  
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)  
-![R](https://img.shields.io/badge/R-276DC3?style=for-the-badge&logo=r&logoColor=white)  
-![SQL](https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+### **Machine Learning & AI Engineering**
+- **Generative AI (2025 Stack):** `LangChain`, `OpenAI API (GPT-4o)`, `LlamaIndex`, `RAG (Retrieval-Augmented Generation)`, `Agentic Workflows`.
+- **Deep Learning & CV:** `PyTorch`, `TensorFlow`, `CNNs`, `OpenCV`, `YOLOv8 (Real-time Detection)`, `MediaPipe`.
+- **Traditional ML:** `Random Forest`, `XGBoost`, `Gradient Boosting`, `LightGBM`, `K-Means Clustering`, `PCA`.
 
-### **Libraries & Frameworks:**  
-![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=TensorFlow&logoColor=white)  
-![Scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)  
-![Matplotlib](https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge&logo=matplotlib&logoColor=white)  
-![Seaborn](https://img.shields.io/badge/Seaborn-1572B6?style=for-the-badge&logo=python&logoColor=white)  
-![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
+### **Business Analytics & Strategy**
+- **KPI Design:** `Customer Lifetime Value (CLV)`, `Average Order Value (AOV)`, `Churn Velocity`, `Inventory Turnover Share`.
+- **Marketing Analytics:** `Multi-Touch Attribution (First/Last Touch)`, `A/B Testing (Two-Sample T-Tests)`, `ROI Modeling`.
+- **Statistical Rigor:** `Time-Series Forecasting (Prophet)`, `Pricing Elasticity (Log-Log Regression)`, `Causal Inference`.
 
-### **Tools:**  
-![Tableau](https://img.shields.io/badge/Tableau-E97627?style=for-the-badge&logo=tableau&logoColor=white)  
-![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)  
-![VS Code](https://img.shields.io/badge/VS%20Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+### **Data Engineering & Cloud Architecture**
+- **Cloud Infrastructure:** `Google Cloud Platform (GCP)`, `BigQuery (Data Partitioning & Clustering)`, `IAM Cloud Security`.
+- **Data Pipelines:** `Advanced SQL (CTEs, Window Functions)`, `dbt (Data Build Tool)`, `Automated API Scraping`, `ETL/ELT Design`.
+- **Full-Stack Deployment:** `Streamlit`, `Flask`, `Docker`, `Git/GitHub Actions`.
 
 ---
 
-## 📈 Projects
+## 🚀 Enterprise Business Analytics Portfolio
 
-### 🏥 **Breast Cancer Prediction**  
-> **Machine Learning | Random Forest | Data Analysis**  
-Achieved **97% accuracy** in predicting breast cancer using a **Random Forest classifier**. Conducted data preprocessing, feature selection, and model optimization.  
-🔗 [View Project](#)
-
----
-
-### 🏠 **Housing Price Prediction**  
-> **Regression Analysis | Feature Engineering**  
-Developed a pipeline for predicting housing prices, including data cleaning, feature engineering, and hyperparameter tuning for regression models.  
-🔗 [View Project](#)
+### 🏢 [Unified Retail Intelligence Engine (The Mega-Project)](https://github.com/neeljshah/Enterprise-Revenue-Engine)
+**Role:** Lead Analytics Architect | **Impact:** $1.7M Revenue Optimization Ecosystem
+*   **Predictive Forecasting:** Built a 90-day demand model using **Prophet**, achieving <8% MAPE and stabilizing inventory cycles.
+*   **Pricing Optimization:** Implemented **Log-Log Regression** to identify price-sensitive SKUs (Elasticity: -4.20), preventing margin erosion.
+*   **Marketing ROI Engine:** Ran simulated **A/B Tests** (P-Value: 0.0002) proving that Free Shipping generated 12% higher AOV than standard discounts.
+*   **Operational Health Dashboard:** Designed a **Product Profitability Matrix** in SQL to categorize stock into "Hero Products" and "Cash Drainers."
+*   **GenAI Agent:** Developed a **LangChain/GPT-4o Agent** that allows non-technical stakeholders to query the BigQuery warehouse using natural language.
+*   **Stack:** `BigQuery`, `Python`, `LangChain`, `SQL`, `Statsmodels`, `Streamlit`.
 
 ---
 
-### 🖼️ **Image Classification with CNNs**  
-> **Deep Learning | TensorFlow | Flask API**  
-Built a **Convolutional Neural Network (CNN)** for image classification with **92% test accuracy** and deployed it with a **Flask API** for live predictions.  
-🔗 [View Project](#)
+## 🏀 Basketball Analytics & AI Intelligence
+
+### 👁️ [Project CourtVision: Autonomous Analytics System](https://github.com/neeljshah/Project-CourtVision)
+**Role:** AI Engineer | **Focus:** Computer Vision & Predictive Metrics
+*   **Computer Vision Layer:** Utilizing **YOLOv8** to automate the extraction of player coordinates, speed, and spacing from raw game footage.
+*   **Proprietary Metric Engineering:**
+    *   **RSQ (Real Shot Quality):** Modeling expected value based on defender proximity and shooter historical spatial efficiency.
+    *   **FAP (Fatigue-Adjusted Performance):** Quantifying skill decay based on real-time distance traveled and explosive-burst frequency.
+*   **AI Analyst Voice:** A language layer that generates instant pre-game analytical reports and visualizations overnight with zero manual input.
+*   **Stack:** `PyTorch`, `OpenCV`, `FastAPI`, `XGBoost`.
+
+### 🌌 [Basketball Intelligence Suite: 4-Part Analysis](https://github.com/neeljshah/Basketball-Intelligence-Suite)
+**Role:** Data Scientist | **Focus:** Spatial Physics & Behavioral Modeling
+*   **[Spatial Efficiency Engine](./Spatial-Efficiency):** Used coordinate geometry and KDE Heatmapping to identify "Efficiency Deadzones" and maximize **Expected Points (xP)**.
+*   **[Momentum Volatility Index](./Momentum-Volatility):** Developed a rolling time-series model to identify statistical "Runs" vs. "Noise," optimizing timeout intervention strategies.
+*   **[Behavioral Archetyping](./Player-Archetypes):** Used **Unsupervised K-Means** and **PCA** to segment players by functional style (e.g., "3&D Specialist" vs. "Rim Protector").
+*   **[Defensive Gravity Model](./Defensive-Gravity):** Modeled **Euclidean Space Influence** to quantify a player's "Pull" on defenders, measuring off-ball impact on spacing.
+
+---
+
+## 🏥 Clinical & Core Data Science
+*   **[Breast Cancer Prediction](https://github.com/neeljshah/Predictive-Models):** Achieved **97% Accuracy** using Random Forest and recursive feature elimination.
+*   **[Housing Market Regression](https://github.com/neeljshah/Predictive-Models):** Advanced feature engineering pipeline to predict prices with robust outlier management.
+*   **[Image Classification](https://github.com/neeljshah/Predictive-Models):** Designed **CNN architectures** with 92% test accuracy, deployed via a Flask API.
+
+---
+
+## 💼 Professional Experience & Leadership
+
+### **Fortrex Securities | Infrastructure Developer**
+- Engineered and maintained the corporate website and online payment gateway, ensuring 99.9% uptime for transaction processing.
+- Optimized front-end performance and integrated backend payment APIs for secure client billing.
+
+### **Eagle Scout | Boy Scouts of America**
+- Achieved the highest rank in Scouting through the management of a large-scale community service project. 
+- Cultivated lifelong skills in project management, leadership, and high-integrity decision-making.
+
+### **Leadership & Service | University of Iowa**
+- **Tennis Team Captain:** Led team strategy and fostered resilience in competitive collegiate environments.
+- **Charity Development:** Active volunteer for **Kesem** and **Club Kids for a Cause**, leveraging leadership to support families and community impact.
 
 ---
 
@@ -72,16 +88,3 @@ Built a **Convolutional Neural Network (CNN)** for image classification with **9
 [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:neeljshah22@gmail.com)  
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/neeljshah)  
 
----
-
-
-## 💡 Fun Facts About Me
-
-- 🎾 Former **Tennis Team Captain**.  
-- 🌎 Passionate about **volunteering** and **community service**.  
-- 🏕️ Achieved the rank of **Eagle Scout**.  
-- 💡 Always curious about **AI advancements** and **business analytics**.
-
----
-
-**Thanks for stopping by!** 🚀
