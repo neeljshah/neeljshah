@@ -1,90 +1,123 @@
-# 👋 Hi, I'm Neel Shah 
-### 🚀 Data Scientist | AI Engineer | Business Intelligence Lead | University of Iowa
+# 👋 Hi, I'm Neel Shah
+### 🚀 Data Scientist · AI Engineer · Business Intelligence · University of Iowa
 
 > **"I build end-to-end intelligence systems that translate raw data into multi-million dollar business and athletic advantages."**
 
-I am a **Student at the University of Iowa** majoring in **Data Science** with a minor in **Business Administration**. My work is defined by the "Unified Intelligence" framework—creating autonomous systems where **Data Engineering**, **Predictive Modeling**, and **Generative AI** work together to solve high-stakes problems in global retail and elite sports.
+I'm a **Data Science student at the University of Iowa** (B.S. May 2027) with a minor in **Business Administration**. My work is defined by the **"Unified Intelligence" framework** — autonomous pipelines where **Data Engineering**, **Predictive Modeling**, and **Generative AI** converge to solve high-stakes problems in global retail and elite sports.
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/neeljshah22)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:neeljshah22@gmail.com)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/neeljshah)
 
 ---
 
-## 🛠️ Deep-Dive Tech Stack
+## 🛠️ Tech Stack
 
-### **Machine Learning & AI Engineering**
-- **Generative AI (2025 Stack):** `LangChain`, `OpenAI API (GPT-4o)`, `LlamaIndex`, `RAG (Retrieval-Augmented Generation)`, `Agentic Workflows`.
-- **Deep Learning & CV:** `PyTorch`, `TensorFlow`, `CNNs`, `OpenCV`, `YOLOv8 (Real-time Detection)`, `MediaPipe`.
-- **Traditional ML:** `Random Forest`, `XGBoost`, `Gradient Boosting`, `LightGBM`, `K-Means Clustering`, `PCA`.
+### Machine Learning & AI
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/Scikit--Learn-F7931E?style=flat-square&logo=scikit-learn&logoColor=white)
+![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=flat-square&logo=opencv&logoColor=white)
 
-### **Business Analytics & Strategy**
-- **KPI Design:** `Customer Lifetime Value (CLV)`, `Average Order Value (AOV)`, `Churn Velocity`, `Inventory Turnover Share`.
-- **Marketing Analytics:** `Multi-Touch Attribution (First/Last Touch)`, `A/B Testing (Two-Sample T-Tests)`, `ROI Modeling`.
-- **Statistical Rigor:** `Time-Series Forecasting (Prophet)`, `Pricing Elasticity (Log-Log Regression)`, `Causal Inference`.
+**Generative AI:** `LangChain` `OpenAI API (GPT-4o)` `LlamaIndex` `RAG` `Agentic Workflows`  
+**Deep Learning & CV:** `CNNs` `YOLOv8` `MediaPipe`  
+**Traditional ML:** `Random Forest` `XGBoost` `LightGBM` `K-Means` `PCA` `Gradient Boosting`
 
-### **Data Engineering & Cloud Architecture**
-- **Cloud Infrastructure:** `Google Cloud Platform (GCP)`, `BigQuery (Data Partitioning & Clustering)`, `IAM Cloud Security`.
-- **Data Pipelines:** `Advanced SQL (CTEs, Window Functions)`, `dbt (Data Build Tool)`, `Automated API Scraping`, `ETL/ELT Design`.
-- **Full-Stack Deployment:** `Streamlit`, `Flask`, `Docker`, `Git/GitHub Actions`.
+### Business Analytics & Data Engineering
+![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=postgresql&logoColor=white)
+![BigQuery](https://img.shields.io/badge/BigQuery-4285F4?style=flat-square&logo=google-cloud&logoColor=white)
+![Tableau](https://img.shields.io/badge/Tableau-E97627?style=flat-square&logo=tableau&logoColor=white)
+![Power BI](https://img.shields.io/badge/Power_BI-F2C811?style=flat-square&logo=powerbi&logoColor=black)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
 
----
-
-## 🚀 Enterprise Business Analytics Portfolio
-
-### 🏢 [Unified Retail Intelligence Engine (https://github.com/neeljshah/Enterprise-Revenue-Engine)
-**Role:** Lead Analytics Architect | **Impact:** $1.7M Revenue Optimization Ecosystem
-*   **Predictive Forecasting:** Built a 90-day demand model using **Prophet**, achieving <8% MAPE and stabilizing inventory cycles.
-*   **Pricing Optimization:** Implemented **Log-Log Regression** to identify price-sensitive SKUs (Elasticity: -4.20), preventing margin erosion.
-*   **Marketing ROI Engine:** Ran simulated **A/B Tests** (P-Value: 0.0002) proving that Free Shipping generated 12% higher AOV than standard discounts.
-*   **Operational Health Dashboard:** Designed a **Product Profitability Matrix** in SQL to categorize stock into "Hero Products" and "Cash Drainers."
-*   **GenAI Agent:** Developed a **LangChain/GPT-4o Agent** that allows non-technical stakeholders to query the BigQuery warehouse using natural language.
-*   **Stack:** `BigQuery`, `Python`, `LangChain`, `SQL`, `Statsmodels`, `Streamlit`.
+**Analytics:** `A/B Testing` `CLV` `AOV` `Churn Modeling` `Pricing Elasticity` `Prophet Forecasting`  
+**Engineering:** `dbt` `ETL/ELT` `Advanced SQL (CTEs, Window Functions)` `GCP` `Streamlit` `Flask`
 
 ---
 
-## 🏀 Basketball Analytics & AI Intelligence
+## 🚀 Featured Projects
+
+### 🏢 [Unified Retail Intelligence Engine](https://github.com/neeljshah/Enterprise-Revenue-Engine)
+> **4-phase BI pipeline — forecasting, segmentation, attribution & KPIs on 500K+ real transactions**
+
+| Phase | Technique | Result |
+|---|---|---|
+| Revenue Forecasting | Prophet (90-day) | <8% MAPE |
+| Pricing Optimization | Log-Log Regression | Elasticity: -4.20 |
+| A/B Testing | Two-Sample T-Test | Free Shipping +12% AOV (p=0.0002) |
+| Product KPIs | Profitability Matrix | Hero vs. Cash Drainer classification |
+
+**+ GenAI Agent:** LangChain/GPT-4o natural language interface to query the BigQuery warehouse  
+`BigQuery` `Python` `Prophet` `LangChain` `Statsmodels` `Streamlit` `SQL`
+
+---
+
+### 🏀 [Basketball Intelligence Suite](https://github.com/neeljshah/Basketball-Intelligence-Suite)
+> **4-part spatial & behavioral analytics system built on real NBA play-by-play data**
+
+| Part | Project | Core Technique |
+|---|---|---|
+| 1 | [Spatial Efficiency Engine](./Basketball-Intelligence-Suite/Spatial-Efficiency) | KDE Heatmapping · Shot Quality · Creation Grade |
+| 2 | [Momentum Volatility Index](./Basketball-Intelligence-Suite/Momentum-Volatility) | Rolling Time-Series · Run Detection · Game MVP |
+| 3 | [Defensive Gravity Model](./Basketball-Intelligence-Suite/Defensive-Gravity) | Euclidean Spatial Analysis · Elasticity Scatter |
+| 4 | [Behavioral Archetyping](./Basketball-Intelligence-Suite/Player-Archetypes) | K-Means · PCA · Entropy Score · Versatility Map |
+
+`Power BI` `Python` `Scikit-Learn` `NBA Stats API` `DAX` `Pandas` `NumPy`
+
+---
 
 ### 👁️ [Project CourtVision: Autonomous Analytics System](https://github.com/neeljshah/Project-CourtVision)
-**Role:** AI Engineer | **Focus:** Computer Vision & Predictive Metrics
-*   **Computer Vision Layer:** Utilizing **YOLOv8** to automate the extraction of player coordinates, speed, and spacing from raw game footage.
-*   **Proprietary Metric Engineering:**
-    *   **RSQ (Real Shot Quality):** Modeling expected value based on defender proximity and shooter historical spatial efficiency.
-    *   **FAP (Fatigue-Adjusted Performance):** Quantifying skill decay based on real-time distance traveled and explosive-burst frequency.
-*   **AI Analyst Voice:** A language layer that generates instant pre-game analytical reports and visualizations overnight with zero manual input.
-*   **Stack:** `PyTorch`, `OpenCV`, `FastAPI`, `XGBoost`.
+> **Real-time player tracking + AI analyst voice built on live game footage**
 
-### 🌌 [Basketball Intelligence Suite: 4-Part Analysis](https://github.com/neeljshah/Basketball-Intelligence-Suite)
-**Role:** Data Scientist | **Focus:** Spatial Physics & Behavioral Modeling
-*   **[Spatial Efficiency Engine](./Spatial-Efficiency):** Used coordinate geometry and KDE Heatmapping to identify "Efficiency Deadzones" and maximize **Expected Points (xP)**.
-*   **[Momentum Volatility Index](./Momentum-Volatility):** Developed a rolling time-series model to identify statistical "Runs" vs. "Noise," optimizing timeout intervention strategies.
-*   **[Behavioral Archetyping](./Player-Archetypes):** Used **Unsupervised K-Means** and **PCA** to segment players by functional style (e.g., "3&D Specialist" vs. "Rim Protector").
-*   **[Defensive Gravity Model](./Defensive-Gravity):** Modeled **Euclidean Space Influence** to quantify a player's "Pull" on defenders, measuring off-ball impact on spacing.
+- **Computer Vision:** YOLOv8 + GPU (CUDA) to extract player coordinates, speed & defensive spacing in real time
+- **Proprietary Metrics:** RSQ (Real Shot Quality) and FAP (Fatigue-Adjusted Performance)
+- **AI Analyst Layer:** Generates professional pre-game reports and visualizations overnight — zero manual input
+
+`PyTorch` `YOLOv8` `OpenCV` `FastAPI` `XGBoost` `ByteTrack`
 
 ---
 
-## 🏥 Clinical & Core Data Science
-*   **[Breast Cancer Prediction](https://github.com/neeljshah/Predictive-Models):** Achieved **97% Accuracy** using Random Forest and recursive feature elimination.
-*   **[Housing Market Regression](https://github.com/neeljshah/Predictive-Models):** Advanced feature engineering pipeline to predict prices with robust outlier management.
-*   **[Image Classification](https://github.com/neeljshah/Predictive-Models):** Designed **CNN architectures** with 92% test accuracy, deployed via a Flask API.
+### 🏥 [Predictive Models Suite](https://github.com/neeljshah/Predictive-Models)
+> **Core ML models across healthcare, real estate, and computer vision**
+
+- 🩺 **Breast Cancer Prediction** — 97% accuracy via Random Forest + recursive feature elimination
+- 🏠 **Housing Market Regression** — 70+ variable pipeline with One-Hot Encoding & outlier management
+- 🖼️ **Image Classification CNN** — 92% test accuracy, deployed via Flask API
+
+`Scikit-Learn` `PyTorch` `Flask` `Pandas` `NumPy`
 
 ---
 
-## 💼 Professional Experience & Leadership
+## 💼 Experience
 
-### **Fortrex Securities | Infrastructure Developer**
-- Engineered and maintained the corporate website and online payment gateway, ensuring 99.9% uptime for transaction processing.
-- Optimized front-end performance and integrated backend payment APIs for secure client billing.
+**Business Intelligence Analyst** · Fortrex Securities · Jan 2023 – Feb 2024  
+Engineered KPI dashboards, maintained corporate web infrastructure, and integrated backend payment APIs for 99.9% uptime.
 
-### **Eagle Scout | Boy Scouts of America**
-- Achieved the highest rank in Scouting through the management of a large-scale community service project. 
-- Cultivated lifelong skills in project management, leadership, and high-integrity decision-making.
+**Data Annotation Specialist** · Data Annotation · Mar 2024 – Mar 2025  
+Labeled and validated large-scale ML training datasets; improved annotation pipeline efficiency ~20% through edge case documentation.
 
-### **Leadership & Service | University of Iowa**
-- **Tennis Team Captain:** Led team strategy and fostered resilience in competitive collegiate environments.
-- **Charity Development:** Active volunteer for **Kesem** and **Club Kids for a Cause**, leveraging leadership to support families and community impact.
+**Data Analyst Intern** · SunSolor · Apr 2025 – Aug 2025  
+Delivered Tableau/Power BI dashboards reducing manual reporting time by 30%; conducted full data quality audits across operational datasets.
 
 ---
 
-## 📬 Let's Connect
+## 🎓 Education
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/neeljshah22)  
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:neeljshah22@gmail.com)  
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/neeljshah)  
+**B.S. Data Science, Business Administration Minor** · University of Iowa · Expected May 2027  
+Coursework: Mathematical Statistics · Business Analytics · Discrete Structures · Engineering Calculus II  
+Certifications: Microsoft Excel · Fundamentals of Business Analytics · Power BI Data Analyst Associate  
+🏆 Merit-Based Scholarship Recipient
 
+---
+
+## 🏅 Leadership & Activities
+
+- 🦅 **Eagle Scout** — Large-scale community project management; highest rank in Scouting
+- 🎾 **Tennis Team Captain** — Led team to regional competition
+- 💛 **Kesem** — Fundraising for children impacted by a parent's cancer
+- 🤝 **Club Kids for a Cause** — Youth volunteering and community outreach
+
+---
+
+*Open to internships, research collaborations, and full-time roles.*
