@@ -3,7 +3,7 @@
 
 > **"I build end-to-end intelligence systems that translate raw data into multi-million dollar business and athletic advantages."**
 
-I'm a **Data Science student at the University of Iowa** (B.S. May 2027) with a minor in **Business Administration**. My work is defined by the **"Unified Intelligence" framework** — autonomous pipelines where **Data Engineering**, **Predictive Modeling**, and **Generative AI** converge to solve high-stakes problems in global retail and elite sports.
+I'm a **Data Science student with a minor in **Business Administration**. My work is defined by the **"Unified Intelligence" framework** — autonomous pipelines where **Data Engineering**, **Predictive Modeling**, and **Generative AI** converge to solve high-stakes problems in global retail and elite sports.
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/neeljshah22)
 [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:neeljshah22@gmail.com)
