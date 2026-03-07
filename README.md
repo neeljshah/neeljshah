@@ -67,7 +67,7 @@ I'm a **Data Science student at the University of Iowa** (B.S. May 2027) with a 
 
 ---
 
-### 👁️ [Project CourtVision: Autonomous Analytics System](https://github.com/neeljshah/Project-CourtVision)
+### 👁️ [Project CourtVision: Autonomous Analytics System](https://github.com/neeljshah/BasketballLogic)
 > **Real-time player tracking + AI analyst voice built on live game footage**
 
 - **Computer Vision:** YOLOv8 + GPU (CUDA) to extract player coordinates, speed & defensive spacing in real time
@@ -78,12 +78,12 @@ I'm a **Data Science student at the University of Iowa** (B.S. May 2027) with a 
 
 ---
 
-### 🏥 [Predictive Models Suite](https://github.com/neeljshah/Predictive-Models)
+### 🏥 [Predictive Models Suite]
 > **Core ML models across healthcare, real estate, and computer vision**
 
-- 🩺 **Breast Cancer Prediction** — 97% accuracy via Random Forest + recursive feature elimination
-- 🏠 **Housing Market Regression** — 70+ variable pipeline with One-Hot Encoding & outlier management
-- 🖼️ **Image Classification CNN** — 92% test accuracy, deployed via Flask API
+- 🩺 [Breast Cancer Prediction](https://github.com/neeljshah/breastCancer) — 97% accuracy via Random Forest + recursive feature elimination
+- 🏠 [Housing Market Regression](https://github.com/neeljshah/housingPrice) — 70+ variable pipeline with One-Hot Encoding & outlier management
+- 🖼️ [Image Classification CNN](https://github.com/neeljshah/onlineRetail) — 92% test accuracy, deployed via Flask API
 
 `Scikit-Learn` `PyTorch` `Flask` `Pandas` `NumPy`
 
@@ -104,7 +104,7 @@ Delivered Tableau/Power BI dashboards reducing manual reporting time by 30%; con
 
 ## 🎓 Education
 
-**B.S. Data Science, Business Administration Minor** · University of Iowa · Expected May 2027  
+**B.S. Data Science, Business Administration Minor** · University of Iowa 3 years Coursewrok
 Coursework: Mathematical Statistics · Business Analytics · Discrete Structures · Engineering Calculus II  
 Certifications: Microsoft Excel · Fundamentals of Business Analytics · Power BI Data Analyst Associate  
 🏆 Merit-Based Scholarship Recipient
