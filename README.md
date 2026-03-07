@@ -38,7 +38,7 @@ I'm a **Data Science student at the University of Iowa** (B.S. May 2027) with a 
 
 ## 🚀 Featured Projects
 
-### 🏢 [Unified Retail Intelligence Engine](https://github.com/neeljshah/Enterprise-Revenue-Engine)
+### 🏢 [Unified Retail Intelligence Engine](https://github.com/neeljshah/enterpriseRevenueEngine)
 > **4-phase BI pipeline — forecasting, segmentation, attribution & KPIs on 500K+ real transactions**
 
 | Phase | Technique | Result |
@@ -53,15 +53,15 @@ I'm a **Data Science student at the University of Iowa** (B.S. May 2027) with a 
 
 ---
 
-### 🏀 [Basketball Intelligence Suite](https://github.com/neeljshah/Basketball-Intelligence-Suite)
+### 🏀 [Basketball Intelligence Suite](https://github.com/neeljshah/creationGrade)
 > **4-part spatial & behavioral analytics system built on real NBA play-by-play data**
 
 | Part | Project | Core Technique |
 |---|---|---|
-| 1 | [Spatial Efficiency Engine](./Basketball-Intelligence-Suite/Spatial-Efficiency) | KDE Heatmapping · Shot Quality · Creation Grade |
-| 2 | [Momentum Volatility Index](./Basketball-Intelligence-Suite/Momentum-Volatility) | Rolling Time-Series · Run Detection · Game MVP |
-| 3 | [Defensive Gravity Model](./Basketball-Intelligence-Suite/Defensive-Gravity) | Euclidean Spatial Analysis · Elasticity Scatter |
-| 4 | [Behavioral Archetyping](./Basketball-Intelligence-Suite/Player-Archetypes) | K-Means · PCA · Entropy Score · Versatility Map |
+| 1 | [Spatial Efficiency Engine](./Basketball-Intelligence-Suite/creationGrade) | KDE Heatmapping · Shot Quality · Creation Grade |
+| 2 | [Momentum Volatility Index](./Basketball-Intelligence-Suite/momentumTrend) | Rolling Time-Series · Run Detection · Game MVP |
+| 3 | [Defensive Gravity Model](./Basketball-Intelligence-Suite/gravityInfluence) | Euclidean Spatial Analysis · Elasticity Scatter |
+| 4 | [Behavioral Archetyping](./Basketball-Intelligence-Suite/archetypeClustering) | K-Means · PCA · Entropy Score · Versatility Map |
 
 `Power BI` `Python` `Scikit-Learn` `NBA Stats API` `DAX` `Pandas` `NumPy`
 
