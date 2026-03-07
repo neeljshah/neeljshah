@@ -58,10 +58,10 @@ I'm a **Data Science student at the University of Iowa** (B.S. May 2027) with a 
 
 | Part | Project | Core Technique |
 |---|---|---|
-| 1 | [Spatial Efficiency Engine](./creationGrade) | KDE Heatmapping · Shot Quality · Creation Grade |
-| 2 | [Momentum Volatility Index](./momentumTrend) | Rolling Time-Series · Run Detection · Game MVP |
-| 3 | [Defensive Gravity Model](.gravityInfluence) | Euclidean Spatial Analysis · Elasticity Scatter |
-| 4 | [Behavioral Archetyping](./archetypeClustering) | K-Means · PCA · Entropy Score · Versatility Map |
+| 1 | [Spatial Efficiency Engine](https://github.com/neeljshah/creationGrade) | KDE Heatmapping · Shot Quality · Creation Grade |
+| 2 | [Momentum Volatility Index](https://github.com/neeljshah/momentumTrend) | Rolling Time-Series · Run Detection · Game MVP |
+| 3 | [Defensive Gravity Model](https://github.com/neeljshah/gravityInfluence) | Euclidean Spatial Analysis · Elasticity Scatter |
+| 4 | [Behavioral Archetyping](https://github.com/neeljshah/archetypeClustering) | K-Means · PCA · Entropy Score · Versatility Map |
 
 `Power BI` `Python` `Scikit-Learn` `NBA Stats API` `DAX` `Pandas` `NumPy`
 
