@@ -36,6 +36,25 @@ I'm a Data Science student with a minor in **Business Administration**. My work 
 
 ---
 
+## 📂 ML & Data Science Portfolio
+
+> 10 end-to-end projects spanning sports analytics, NLP, computer vision, business intelligence, and MLOps.
+
+| # | Project | Domain | Stack | Highlights |
+|---|---------|--------|-------|------------|
+| 1 | [**NBA Player Analytics**](https://github.com/neeljshah/nba-player-analytics) | Sports · ML | XGBoost, Plotly, scikit-learn | Predicts player value (BPM/VORP/WS) · R²=0.847 · aging curve modeling |
+| 2 | [**Customer Churn Predictor**](https://github.com/neeljshah/customer-churn-predictor) | Business · ML | XGBoost, SHAP, Streamlit | 5-model comparison · AUC=0.891 · SHAP explainability dashboard |
+| 3 | [**Market Sentiment NLP**](https://github.com/neeljshah/market-sentiment-nlp) | Finance · NLP | FinBERT, VADER, Transformers | Sentiment → price signal · IC=0.34 · backtested trading strategy |
+| 4 | [**Time Series Forecasting Suite**](https://github.com/neeljshah/time-series-forecasting-suite) | Data Science | ARIMA, Prophet, LSTM, PyTorch | 4 models × 3 domains · walk-forward CV · anomaly detection |
+| 5 | [**NFL Draft Analytics**](https://github.com/neeljshah/nfl-draft-analytics) | Sports · Stats | survival analysis, XGBoost | ML-derived pick value chart · trade analyzer · WAR by position |
+| 6 | [**Deep Learning & CV**](https://github.com/neeljshah/deep-learning-cv) | Deep Learning | PyTorch, NumPy, ResNet | Backprop from scratch · CNN → transfer learning · GradCAM |
+| 7 | [**MLOps Pipeline**](https://github.com/neeljshah/mlops-pipeline) | MLOps · Eng | MLflow, FastAPI, Docker | Experiment tracking · model registry · REST API · CI/CD |
+| 8 | [**Sports Betting Analytics**](https://github.com/neeljshah/sports-betting-analytics) | Sports · Stats | scipy, statsmodels | Market efficiency analysis · Kelly Criterion · Monte Carlo sim |
+| 9 | [**LLM BI Assistant**](https://github.com/neeljshah/llm-bi-assistant) | AI · BI | Claude API, FastAPI, Streamlit | Natural language → SQL · auto-visualization · multi-turn memory |
+| 10 | [**Sports Vision Tracker**](https://github.com/neeljshah/sports-vision-tracker) | CV · Sports | YOLO, OpenCV, PyTorch | Kalman filter tracking · court homography · player heatmaps |
+
+---
+
 ## 🚀 Featured Projects
 
 ### 🏢 [Unified Retail Intelligence Engine](https://github.com/neeljshah/enterpriseRevenueEngine)
