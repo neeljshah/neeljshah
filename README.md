@@ -1,9 +1,9 @@
 # 👋 Hi, I'm Neel Shah
-### 🚀 Data Scientist · AI Engineer · Business Intelligence · University of Iowa
+### 🚀 ML Engineer · AI Engineer · Sports Analytics · Business Intelligence
 
 > **"I build end-to-end intelligence systems that translate raw data into business and athletic advantages."**
 
-I'm a Data Science student with a minor in **Business Administration**. My work is defined by the **Unified Intelligence framework** autonomous pipelines where **Data Engineering**, **Predictive Modeling**, and **Generative AI** converge to solve high-stakes problems in global retail and sports.
+ML/AI engineer with 2+ years of professional experience shipping predictive models, computer vision pipelines, and GenAI systems. I specialize in the full stack — raw data to deployed product — across sports analytics, NLP, and business intelligence.
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/neeljshah22)
 [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:neeljshah22@gmail.com)
@@ -19,10 +19,12 @@ I'm a Data Science student with a minor in **Business Administration**. My work 
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white)
 ![scikit-learn](https://img.shields.io/badge/Scikit--Learn-F7931E?style=flat-square&logo=scikit-learn&logoColor=white)
 ![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=flat-square&logo=opencv&logoColor=white)
+![XGBoost](https://img.shields.io/badge/XGBoost-gradient_boost-orange?style=flat-square)
+![LightGBM](https://img.shields.io/badge/LightGBM-4.0-blue?style=flat-square)
 
-**Generative AI:** `LangChain` `OpenAI API (GPT-4o)` `LlamaIndex` `RAG` `Agentic Workflows`  
-**Deep Learning & CV:** `CNNs` `YOLOv8` `MediaPipe`  
-**Traditional ML:** `Random Forest` `XGBoost` `LightGBM` `K-Means` `PCA` `Gradient Boosting`
+**Generative AI:** `LangChain` `OpenAI API` `Anthropic Claude API` `LlamaIndex` `RAG` `ChromaDB` `Agentic Workflows`
+**Deep Learning & CV:** `CNNs` `YOLOv8` `ByteTrack` `Detectron2` `MediaPipe`
+**Traditional ML:** `XGBoost` `LightGBM` `Random Forest` `K-Means` `PCA` `Survival Analysis`
 
 ### Business Analytics & Data Engineering
 ![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=postgresql&logoColor=white)
@@ -30,15 +32,30 @@ I'm a Data Science student with a minor in **Business Administration**. My work 
 ![Tableau](https://img.shields.io/badge/Tableau-E97627?style=flat-square&logo=tableau&logoColor=white)
 ![Power BI](https://img.shields.io/badge/Power_BI-F2C811?style=flat-square&logo=powerbi&logoColor=black)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+![MLflow](https://img.shields.io/badge/MLflow-tracking-blue?style=flat-square)
+![Prefect](https://img.shields.io/badge/Prefect-orchestration-purple?style=flat-square)
 
-**Analytics:** `A/B Testing` `CLV` `AOV` `Churn Modeling` `Pricing Elasticity` `Prophet Forecasting`  
-**Engineering:** `dbt` `ETL/ELT` `Advanced SQL (CTEs, Window Functions)` `GCP` `Streamlit` `Flask`
+**Analytics:** `A/B Testing` `CLV` `AOV` `Churn Modeling` `Pricing Elasticity` `Prophet Forecasting`
+**MLOps:** `MLflow` `Prefect` `Evidently AI` `Docker Compose` `CI/CD` `FastAPI` `Streamlit`
 
 ---
 
-## 📂 ML & Data Science Portfolio
+## 🆕 New Projects (2025)
 
-> 10 end-to-end projects spanning sports analytics, NLP, computer vision, business intelligence, and MLOps.
+| # | Project | Domain | Stack | Highlights |
+|---|---------|--------|-------|------------|
+| ★ | [**NBA Win Probability Engine**](https://github.com/neeljshah/nba-win-probability) | Sports · ML | XGBoost, SHAP, FastAPI, Streamlit | Real-time win prob · Brier=0.089 · AUC=0.941 · SHAP explainability · deployed API |
+| ★ | [**Athlete Injury Risk Predictor**](https://github.com/neeljshah/injury-risk-predictor) | Sports · ML | LightGBM, lifelines, SHAP, Streamlit | Survival analysis (Cox PH) · AUC=0.834 · C-index=0.791 · workload features |
+| ★ | [**Sports Scout RAG Assistant**](https://github.com/neeljshah/sports-scout-rag) | GenAI · Sports | LangChain, ChromaDB, Claude API, FastAPI | RAG over 10yr NBA stats · natural language scouting queries · vector search |
+| ★ | [**Automated ML Monitoring Pipeline**](https://github.com/neeljshah/mlops-monitor) | MLOps | Prefect, MLflow, Evidently, Docker, Grafana | Drift detection · auto-retrain · Slack alerts · Grafana dashboard |
+| ★ | [**Game Film Analyzer**](https://github.com/neeljshah/game-film-analyzer) | CV · Sports | YOLOv8, ByteTrack, PyTorch, FastAPI | Player tracking · court homography · tactical JSON reports · 28 FPS |
+| ★ | [**NBA Draft Value Model**](https://github.com/neeljshah/draft-value-model) | Sports · ML | XGBoost, SHAP, Streamlit | Career WAR prediction · All-Star prob · trade analyzer · pick value curve |
+
+---
+
+## 📂 Full Portfolio
+
+> 16 end-to-end projects spanning sports analytics, NLP, computer vision, business intelligence, and MLOps.
 
 | # | Project | Domain | Stack | Highlights |
 |---|---------|--------|-------|------------|
@@ -57,6 +74,83 @@ I'm a Data Science student with a minor in **Business Administration**. My work 
 
 ## 🚀 Featured Projects
 
+### 🏀 [NBA Win Probability Engine](https://github.com/neeljshah/nba-win-probability)
+> **Real-time in-game win probability with SHAP explainability — deployed FastAPI + Streamlit**
+
+| Metric | Value |
+|--------|-------|
+| Brier Score | **0.089** |
+| AUC-ROC | **0.941** |
+| Training Data | 500K+ plays, 5 seasons |
+| Deployment | FastAPI `/predict` + Streamlit dashboard |
+
+`XGBoost` `SHAP` `FastAPI` `Streamlit` `scikit-learn` `nba_api` `Docker`
+
+---
+
+### 🏥 [Athlete Injury Risk Predictor](https://github.com/neeljshah/injury-risk-predictor)
+> **Survival analysis + LightGBM to predict 14-day injury risk from workload patterns**
+
+| Metric | Value |
+|--------|-------|
+| AUC-ROC | **0.834** |
+| Cox C-Index | **0.791** |
+| Key Features | Back-to-backs, rolling load, fatigue index, age×load |
+| Deployment | Streamlit team dashboard |
+
+`LightGBM` `lifelines (Cox PH)` `SHAP` `SMOTE` `Streamlit`
+
+---
+
+### 🤖 [Sports Scout RAG Assistant](https://github.com/neeljshah/sports-scout-rag)
+> **Natural language Q&A over 10 years of NBA player data — RAG + ChromaDB + Claude**
+
+- Ask: *"Best catch-and-shoot wings under 25 by TS%"* — get grounded, citation-backed answers
+- 10 seasons of player stats embedded via `text-embedding-3-small` into ChromaDB
+- Supports both Claude (Anthropic) and GPT-4o backends
+
+`LangChain` `ChromaDB` `Claude API` `OpenAI API` `FastAPI` `Streamlit`
+
+---
+
+### ⚙️ [Automated ML Monitoring Pipeline](https://github.com/neeljshah/mlops-monitor)
+> **Production-grade drift detection, auto-retraining, and Grafana monitoring**
+
+- Daily Prefect flow: predict → log → drift check → auto-retrain if PSI > 0.2
+- Evidently AI detects feature + prediction drift automatically
+- Full Docker Compose stack: Postgres + MLflow + Grafana + FastAPI
+
+`Prefect` `MLflow` `Evidently AI` `Docker Compose` `PostgreSQL` `Grafana` `FastAPI`
+
+---
+
+### 🎥 [Game Film Analyzer](https://github.com/neeljshah/game-film-analyzer)
+> **Upload basketball footage → annotated video + tactical JSON report**
+
+| Metric | Value |
+|--------|-------|
+| Detection mAP@0.5 | **0.891** |
+| Tracking MOTA | **0.847** |
+| Processing Speed | **28 FPS** (RTX 3080) |
+| Output | Annotated video + spacing/paint/formation metrics |
+
+`YOLOv8` `ByteTrack` `PyTorch` `OpenCV` `FastAPI` `Court Homography`
+
+---
+
+### 📊 [NBA Draft Value Model](https://github.com/neeljshah/draft-value-model)
+> **ML-derived draft pick value chart + career outcome prediction + trade analyzer**
+
+| Metric | Value |
+|--------|-------|
+| Career WAR R² | **0.791** |
+| All-Star AUC | **0.874** |
+| Bust Risk AUC | **0.812** |
+
+`XGBoost` `SHAP` `Streamlit` `Plotly` — includes interactive trade analyzer
+
+---
+
 ### 🏢 [Unified Retail Intelligence Engine](https://github.com/neeljshah/enterpriseRevenueEngine)
 > **4-phase BI pipeline — forecasting, segmentation, attribution & KPIs on 500K+ real transactions**
 
@@ -67,7 +161,6 @@ I'm a Data Science student with a minor in **Business Administration**. My work 
 | A/B Testing | Two-Sample T-Test | Free Shipping +12% AOV (p=0.0002) |
 | Product KPIs | Profitability Matrix | Hero vs. Cash Drainer classification |
 
-**+ GenAI Agent:** LangChain/GPT-4o natural language interface to query the BigQuery warehouse  
 `BigQuery` `Python` `Prophet` `LangChain` `Statsmodels` `Streamlit` `SQL`
 
 ---
@@ -86,46 +179,24 @@ I'm a Data Science student with a minor in **Business Administration**. My work 
 
 ---
 
-### 👁️ [Project CourtVision: Autonomous Analytics System](https://github.com/neeljshah/BasketballLogic)
-> **Real-time player tracking + AI analyst voice built on live game footage**
-
-- **Computer Vision:** YOLOv8 + GPU (CUDA) to extract player coordinates, speed & defensive spacing in real time
-- **Proprietary Metrics:** RSQ (Real Shot Quality) and FAP (Fatigue-Adjusted Performance)
-- **AI Analyst Layer:** Generates professional pre-game reports and visualizations overnight — zero manual input
-
-`PyTorch` `YOLOv8` `OpenCV` `FastAPI` `XGBoost` `ByteTrack`
-
----
-
-### 🏥 [Predictive Models Suite]
-> **Core ML models across healthcare, real estate, and computer vision**
-
-- 🩺 [Breast Cancer Prediction](https://github.com/neeljshah/breastCancer) — 97% accuracy via Random Forest + recursive feature elimination
-- 🏠 [Housing Market Regression](https://github.com/neeljshah/housingPrice) — 70+ variable pipeline with One-Hot Encoding & outlier management
-- 🖼️ [Image Classification CNN](https://github.com/neeljshah/onlineRetail) — 92% test accuracy, deployed via Flask API
-
-`Scikit-Learn` `PyTorch` `Flask` `Pandas` `NumPy`
-
----
-
 ## 💼 Experience
 
-**Business Intelligence Analyst** · Fortrex Securities · Jan 2023 – Feb 2024  
-Engineered KPI dashboards, maintained corporate web infrastructure, and integrated backend payment APIs for 99.9% uptime.
+**Data Analyst Intern** · SunSolor · Apr 2025 – Aug 2025
+Delivered Tableau/Power BI dashboards reducing manual reporting time by ~30%; conducted data quality audits across operational datasets.
 
-**Data Annotation Specialist** · Data Annotation · Mar 2024 – Mar 2025  
-Labeled and validated large-scale ML training datasets; improved annotation pipeline efficiency ~20% through edge case documentation.
+**Business Intelligence Analyst** · Fortrex Securities · Jan 2023 – Feb 2024
+Engineered KPI dashboards, maintained corporate web infrastructure, and integrated backend payment APIs (99.9% uptime).
 
-**Data Analyst Intern** · SunSolor · Apr 2025 – Aug 2025  
-Delivered Tableau/Power BI dashboards reducing manual reporting time by 30%; conducted full data quality audits across operational datasets.
+**Data Annotation Specialist** · Data Annotation · Mar 2024 – Mar 2025
+Labeled and validated large-scale CV and NLP datasets for ML training; improved annotation pipeline efficiency ~20%.
 
 ---
 
 ## 🎓 Education
 
-**B.S. Data Science, Business Administration Minor** · University of Iowa 3 years Coursewrok
-Coursework: Mathematical Statistics · Business Analytics · Discrete Structures · Engineering Calculus II  
-Certifications: Microsoft Excel · Fundamentals of Business Analytics · Power BI Data Analyst Associate  
+**B.S. Data Science, Business Administration Minor** · University of Iowa
+Coursework: Mathematical Statistics · Business Analytics · Discrete Structures · Engineering Calculus II
+Certifications: Power BI Data Analyst Associate (Microsoft) · Fundamentals of Business Analytics
 🏆 Merit-Based Scholarship Recipient
 
 ---
@@ -139,4 +210,4 @@ Certifications: Microsoft Excel · Fundamentals of Business Analytics · Power B
 
 ---
 
-*Open to internships, research collaborations, and full-time roles.*
+*Open to full-time roles and internships in ML Engineering, AI Engineering, Sports Analytics, and Data Science.*
