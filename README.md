@@ -40,7 +40,7 @@ ML/AI engineer with 2+ years of professional experience shipping predictive mode
 
 ---
 
-## 🆕 New Projects (2025)
+## 🆕 New Projects (2026)
 
 | # | Project | Domain | Stack | Highlights |
 |---|---------|--------|-------|------------|
