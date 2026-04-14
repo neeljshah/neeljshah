@@ -194,7 +194,7 @@ Labeled and validated large-scale CV and NLP datasets for ML training; improved 
 
 ## 🎓 Education
 
-**B.S. Data Science, Business Administration Minor** · University of Iowa
+**B.S. Data Science, Business Administration Minor (In Progress)** · University of Iowa
 Coursework: Mathematical Statistics · Business Analytics · Discrete Structures · Engineering Calculus II
 Certifications: Power BI Data Analyst Associate (Microsoft) · Fundamentals of Business Analytics
 🏆 Merit-Based Scholarship Recipient
