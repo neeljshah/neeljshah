@@ -39,6 +39,33 @@ ML/AI engineer with 2+ years of professional experience shipping predictive mode
 **MLOps:** `MLflow` `Prefect` `Evidently AI` `Docker Compose` `CI/CD` `FastAPI` `Streamlit`
 
 ---
+### 🎬 [Court Vision](https://github.com/neeljshah/court-vision)
+> **End-to-end NBA broadcast analytics engine — CV tracking, ML predictions, and betting edge detection**
+
+| Metric | Value |
+|--------|-------|
+| Detection Framework | YOLOv8 + OSNet Re-ID |
+| Tracking | Kalman Filter + Hungarian Algorithm |
+| Player Prop Models | 7 trained models (points, rebounds, assists, 3s, blocks, turnovers, steals) |
+| Points Prediction R² | **0.47** |
+| Rebounds Prediction R² | **0.40** |
+| Assists Prediction R² | **0.46** |
+| 3PM Prediction R² | **0.28** |
+| Processing Pipeline | Court homography, OCR, feature engineering |
+| Backend | FastAPI (10 endpoints) |
+| Frontend | Next.js |
+| Simulator | Monte Carlo possession simulator (in development) |
+
+**Key Features:**
+- Broadcast video → spatial tracking data (defender distance, spacing, fatigue)
+- ~90 ML models for possession-level predictions
+- Season backtests mapped to closing lines
+- Reproducible demo and API sandbox available
+- GPU-optimized processing pipeline (RunPod/cloud infrastructure)
+
+`YOLOv8` `OSNet` `Kalman Tracking` `Homography` `FastAPI` `Next.js` `PyTorch` `XGBoost` `Monte Carlo`
+
+---
 
 ## 🆕 New Projects (2026)
 
