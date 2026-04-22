@@ -145,22 +145,10 @@ A production pipeline that most quant-sports shops cannot build because it requi
 
 ---
 
-## 📊 GitHub Analytics
-
-<div align="center">
-
-![Neel's GitHub stats](https://github-readme-stats.vercel.app/api?username=neeljshah&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true)
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=neeljshah&layout=compact&theme=tokyonight&langs_count=8)
-![GitHub Streak](https://streak-stats.demolab.com?user=neeljshah&theme=tokyonight)
-
-</div>
-
----
-
 ## 📬 Contact & Alpha
 
 - **Email:** [neeljshah22@gmail.com](mailto:neeljshah22@gmail.com)
 - **LinkedIn:** [linkedin.com/in/neeljshah22](https://www.linkedin.com/in/neeljshah22/)
 - **Open to:** Quant research roles (sports, systematic equity, crypto microstructure) · Alt-data sourcing conversations · Collaborations on CV-for-sports or calibrated probabilistic modeling.
 
-> *"In God we trust. All others must bring data — and a purged cross-validation split."*
+
