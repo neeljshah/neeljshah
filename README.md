@@ -1,154 +1,246 @@
 <div align="center">
 
 # Neel J. Shah
-### Quantitative Researcher · Sports-Prediction ML · Alt-Data Alpha
+### Quantitative Researcher · Alt-Data Extraction · Sports-Market Pricing
 
-**Building the most advanced NBA prediction system in the world — the only one extracting spatial alpha from broadcast video.**
+**Undergraduate (B.S. Data Science, University of Iowa, 2022–present) building toward alt-data and sports-quant research seats.**
 
 [![Email](https://img.shields.io/badge/Email-neeljshah22%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:neeljshah22@gmail.com)
+[![Portfolio](https://img.shields.io/badge/Portfolio-neelshahportfolio.netlify.app-0A66C2?style=for-the-badge)](https://neelshahportfolio.netlify.app)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-neeljshah22-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/neeljshah22/)
-[![GitHub](https://img.shields.io/badge/GitHub-neeljshah-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/neeljshah)
 
 </div>
 
 ---
 
-> **Alpha Thesis.** Public sports markets are priced off box-score aggregates. They do not see **where** the ball is, **who** is guarding **whom**, **how fatigued** a defender is in the 4th quarter, or **how tight** off-ball spacing is on a pick-and-roll. I extract those signals directly from broadcast video at 60fps and convert them into +EV positions versus sportsbooks — edges that Bloomberg, Second Spectrum, and every retail model structurally cannot access.
+> **Thesis.** Public sports markets are priced off box-score aggregates that every retail model uses. They don't see where defenders stand at catch, how contested a shot actually is, or how many minutes of transition defense a player has in his legs. I extract those signals from broadcast video, price positions against them, and benchmark fills against Pinnacle's closing line. The edge persists because the CV pipeline is non-trivial to build and data-hungry to validate — which keeps soft markets wider than sides or totals.
 
 ---
 
-## 🏀 CourtVision — Flagship System
+## CourtVision — NBA Sports-Quant System
 
-**End-to-end, possession-by-possession NBA simulator. Broadcast video in → +EV edges out.**
+**[github.com/neeljshah/court-vision](https://github.com/neeljshah/court-vision)**
 
-A production pipeline that most quant-sports shops cannot build because it requires equal mastery of computer vision, statistical modeling, distributed systems, and market microstructure. I built all of it, alone.
+A possession-level NBA simulator priced against live prop markets. Broadcast video in → fractional-Kelly-sized +EV positions out.
 
 ```
- Broadcast Video (60fps)
-        │
-        ▼
-┌───────────────────────┐
-│ YOLOv8n player/ball   │  ← custom-trained ball detector
-│ SIFT homography       │  ← broadcast → court coordinates
-│ Kalman + Hungarian    │  ← multi-object tracking
-│ OSNet re-ID (512-d)   │  ← persistent player identity
-│ EasyOCR jersey        │  ← jersey-number disambiguation
-│ EventDetector         │  ← shots, passes, screens, P&R
-└──────────┬────────────┘
-           │  60+ spatial features (defender_dist, spacing, fatigue, usage)
-           ▼
-┌───────────────────────┐
-│ 75 trained models     │  ← .pkl/.json, walk-forward CV, purged splits
-│ 7 player-prop stacks  │  ← pts / reb / ast / 3pm / blk / tov / stl
-│ Win-probability XGB   │  ← calibrated via Platt + isotonic
-└──────────┬────────────┘
-           ▼
-┌───────────────────────┐
-│ 10,000-path Monte     │
-│ Carlo game simulator  │  ← correlated residuals, tempo-aware
-└──────────┬────────────┘
-           ▼
-┌───────────────────────┐
-│ Kelly-optimal book    │  ← fractional Kelly, correlation-aware
-│ vs. DK/FD/MGM lines   │  ← CLV-tracked, slippage-modeled
-└───────────────────────┘
+Broadcast Video (60fps)
+  → YOLOv8n player/ball detection    (custom-trained ball detector)
+  → SIFT homography                  (pixel coords → court feet)
+  → Kalman + Hungarian tracking      (multi-object, occlusion-robust)
+  → OSNet re-ID (512-dim)            (persistent player identity across frames)
+  → EasyOCR jersey number            (disambiguation on re-ID collisions)
+  → EventDetector                    (shots, passes, drives, screens)
+  → CV Features ← THE MOAT          (defender_distance, spacing_score, legs_fatigue)
+         │
+NBA API (game logs, shot dashboard, PBP, lineup on/off, injury reports)
+         │
+Feature Store (keyed on game_id × event_id × player_id, ingestion timestamps
+               preserved for no-leakage walk-forward replay at tip-off time)
+         │
+75-Model ML Stack
+  Tier 1 (API only):  XGBoost + Ridge stacker → 7 prop models, win prob, game total
+  Tier 2 (shot data): xFG v1, shot zone tendency, clutch efficiency
+  Tier 3 (CV ≥20g):  xFG v2 w/ defender, play type, spacing rating
+  Tier 4 (CV ≥50g):  fatigue curve, rebound positioning, closeout quality
+  Tier 5 (NLP):       injury return, load management, DNP predictor (AUC 0.979)
+         │
+10,000-path Monte Carlo simulation
+  (correlated residuals, tempo-aware, FoulTrouble/GarbageTime/Q4Usage wired)
+         │
+Fractional Kelly + Ledoit-Wolf-shrunk 7×7 correlation matrix
+  (reduces correlated-prop overstaking by 20–40% vs naive Kelly)
+         │
+CLV tracking vs Pinnacle Shin-devigged close
 ```
 
-**Why this beats the field:**
-- **Spatial CV data is the moat.** Every retail sports-betting model in the world uses the same NBA Stats API. I have features no one else has — because extracting them requires an 8-stage CV pipeline that costs real engineering time to build correctly.
-- **Production-grade, not a notebook.** 960+ passing tests across 13 phases. FastAPI service with 9 endpoints. RunPod GPU orchestration. SQLite ingest queue with crash-safe verification. B2 remote sync.
-- **Calibrated, not just accurate.** Reliability diagrams on every prop. CalibrationLayer with isotonic regression. Sharpe is reported *after* transaction costs and *after* deflation for multiple testing.
+### Results (80-game holdout, walk-forward season-purged)
 
-### Measured Performance (live, 2024–25 season)
+| Model | Target | R² | MAE | ECE | vs API-only baseline |
+|-------|--------|----|-----|-----|---------------------|
+| pts | points | 0.47 | 4.9 | 0.021 | +0.08 Δ R² from CV features |
+| reb | rebounds | 0.40 | 2.1 | 0.028 | — |
+| ast | assists | 0.46 | 1.7 | 0.024 | — |
+| fg3m | 3PM | 0.28 | 1.0 | 0.035 | — |
+| tov | turnovers | 0.25 | 1.1 | 0.041 | — |
+| blk | blocks | 0.18 | 0.6 | 0.056 | — |
+| stl | steals | 0.09 | 0.7 | 0.071 | — |
 
-| Prop | Model R² | Baseline (naïve μ) | Lift |
-|------|----------|---------------------|------|
-| Points     | **0.47** | 0.21 | +124% |
-| Rebounds   | **0.40** | 0.19 | +111% |
-| Assists    | **0.46** | 0.22 | +109% |
-| 3PM        | **0.28** | 0.11 | +155% |
-| Blocks     | **0.18** | 0.06 | +200% |
-| Turnovers  | **0.25** | 0.12 | +108% |
-| Steals     | **0.09** | 0.04 | +125% |
+**Portfolio:** 312 settled picks. CLV **+14 bps/bet** vs Pinnacle Shin-devigged close (t=2.3).
+Realized ROI +3.8% on 1u fractional-Kelly sizing. Paper-book only — no live capital until
+the Phase 19 gate passes (≥50 paper bets, CLV beat rate ≥55%, paper ROI ≥3%).
 
-**R² on player props above 0.40 is state-of-the-art.** Published academic work tops out around 0.25–0.30 for points; commercial services (DonBest, etc.) do not publish but empirically track ~0.30. My edge comes from the spatial features: `defender_distance_on_shot`, `teammate_spacing_pre_pass`, `minutes_on_floor_with_starters`, `fatigue_index` — none available from box scores.
+### The CV Moat
 
-**Stack:** `YOLOv8n` · `SIFT` · `Kalman+Hungarian` · `OSNet re-ID` · `EasyOCR` · `XGBoost` · `LightGBM` · `FastAPI` · `Next.js` · `PostgreSQL` · `RunPod RTX 3090/4090` · `Docker` · `B2`
+Three features that do not exist in any public NBA dataset:
 
----
+- **`defender_distance`** — meters to nearest defender at shot release, computed in court
+  coordinates post-homography. Correlates with shot quality above what shot_distance +
+  shot_type already encodes.
+- **`spacing_score`** — convex-hull area of the 4 off-ball offensive players, normalized
+  to half-court. Proxy for how much the defense must respect perimeter threats.
+- **`legs_fatigue`** — cumulative running distance over the last 6 minutes, exponentially
+  decayed. Captures the "tired-legs late-game" effect invisible to box-score MIN.
 
-## 🛠 The Quant Stack
+SHAP attribution on the pts model: these three combined carry **31% of mass**.
+Δ R² over API-only baseline: **+0.08**.
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![NumPy](https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white)
-![pandas](https://img.shields.io/badge/pandas-150458?style=flat-square&logo=pandas&logoColor=white)
-![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)
-![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=flat-square&logo=opencv&logoColor=white)
-![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikit-learn&logoColor=white)
-![XGBoost](https://img.shields.io/badge/XGBoost-337AB7?style=flat-square)
-![statsmodels](https://img.shields.io/badge/statsmodels-3F4F75?style=flat-square)
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=flat-square&logo=postgresql&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
-![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazon-aws&logoColor=white)
-![CUDA](https://img.shields.io/badge/CUDA-76B900?style=flat-square&logo=nvidia&logoColor=white)
+### Methodology
 
-**Methods:** Kalman Filtering · Cointegration · Monte Carlo · HMMs · GARCH · Transformer NLP · Graph Diffusion · Purged K-Fold CV · Deflated Sharpe · Isotonic Calibration · Fractional Kelly
-**Infra:** Event-driven backtesters · Tick-level replay · Walk-forward CV · GPU orchestration (RunPod) · NVDEC hardware decode · CFS quota tuning
+**Walk-forward, season-purged — always.** Train on `game_date < t`, evaluate on
+`game_date ≥ t`. A 48-hour purge window drops same-team games from the training window,
+eliminating autocorrelation leakage that K-fold silently introduces. The harness is in
+[`src/prediction/prop_backtester.py`](https://github.com/neeljshah/court-vision/blob/master/src/prediction/prop_backtester.py).
 
----
+**Shin (1992) devig.** Pinnacle closes are devigged with the Shin method before CLV is
+computed. Simple power-sum devig over-corrects the favourite-longshot bias; Shin fits a
+single insider-trading parameter *z* per market and yields the corrected probability:
 
-## 📈 Strategies & Research
+$$p_{\text{true}} = \frac{p_{\text{observed}} - z}{1 - 2z}$$
 
-### 1. CourtVision — NBA Player Props & Game Outcomes *(see above)*
-> *The only public sports model combining broadcast-video spatial features with calibrated Monte Carlo game simulation.*
+On NBA game totals *z* ≈ 0.02–0.04; on illiquid alt-line props it exceeds 0.06.
 
-- **Hypothesis:** Player-prop markets misprice second-order effects — defender proximity, teammate spacing, cumulative fatigue — that cannot be recovered from box scores.
-- **Data & Pipeline:** 80+ broadcast games @ 60fps (~1.1TB raw video). Pipeline produces tracking JSON (~45MB/game), event logs, and 60+ engineered features per possession. Ingest queue is SQLite-backed and crash-safe; pod runs are reproducible via preflight hash checks.
-- **Modeling:** Per-prop stacked ensembles (GBM + ridge + NN residual), trained with walk-forward CV, 10-day embargo, and Winsorized targets. Game outcomes via a 10k-path Monte Carlo with correlated residuals pulled from prop-model covariance. Kelly sizing is correlation-aware (full Σ, not diagonal).
-- **Performance:** Prop R² reported above. Season-long CLV: **+2.3%** average across graded props (sample: 2024-Q4 through 2025-Q1). Model calibration ECE < 0.03 on win-probability.
+**Fractional Kelly sizing.** Full Kelly optimizes expected log-wealth but produces ruin
+under any mis-estimation of *p*. The system uses *k* ∈ [0.25, 0.5] × f* where *k* is
+calibrated to market maturity. At *k* = 0.25, ruin probability under a 2% edge
+mis-estimation drops roughly 10× vs full Kelly. Implemented in
+[`src/prediction/betting_portfolio.py`](https://github.com/neeljshah/court-vision/blob/master/src/prediction/betting_portfolio.py).
 
-### 2. NLP Alpha — Sentiment Drift in 10-K Risk Disclosures
-> *Managers telegraph deterioration through lexical change before it prints in fundamentals.*
+**Ledoit-Wolf correlation shrinkage.** A 7×7 sample covariance matrix from N=80 games
+is rank-deficient and amplifies spurious correlations (pts/reb share minute-driven
+variance; sample ρ ≈ 0.55–0.70 vs true ρ materially lower). Ledoit-Wolf shrinks toward
+a scaled identity, reducing naive Kelly overstaking on correlated prop legs by 20–40%.
+One line: `sklearn.covariance.LedoitWolf().fit(prop_residuals)`.
 
-- **Hypothesis:** Year-over-year semantic drift in Item 1A (Risk Factors) / MD&A is a leading indicator of forward 6M earnings surprise, orthogonal to price momentum and analyst revisions.
-- **Data & Pipeline:** EDGAR full-text 2005–2024, ~180k filings (~420GB raw). XBRL-tag section parsing, MinHash-LSH deduplication against T-1 filing to isolate *genuinely new* disclosure.
-- **Modeling:** Fine-tuned FinBERT; CLS-embedding cosine distance as raw signal. Cross-sectional rank, neutralized vs. Fama-French 5 + GICS-2, Winsorized 1%/99%.
-- **Performance (2015–2023 OOS, weekly, 5bps TC):** Sharpe **1.62** · Max DD **-9.4%** · Ann. Vol **11.8%** · Half-life **~14 days** · Capacity **~$400M**.
+**Conformal prediction intervals.** Each bet carries (lo_80, hi_80, lo_95, hi_95) from
+a split conformal procedure on a held-out calibration set — distribution-free coverage
+guarantee regardless of model misspecification.
+[`src/prediction/conformal_props.py`](https://github.com/neeljshah/court-vision/blob/master/src/prediction/conformal_props.py).
 
-### 3. Microstructure — Triangular Arbitrage on Centralized Crypto Venues
-> *Cross-pair mispricings persist just long enough to reward superior execution plumbing.*
+**CLV over ROI.** On 312 picks, realized ROI has a standard error of ~3–4%. CLV against
+Pinnacle's close is approximately unbiased and converges to the true edge ~5× faster.
+It's the primary metric; ROI is a secondary check.
 
-- **Hypothesis:** Fee-adjusted triangular cycles on Binance exhibit exploitable deviations during funding-rate dislocations and thin-book regimes.
-- **Data & Pipeline:** L2 WebSocket feed, 10ms bars, ~2TB/month in partitioned Parquet. Collocated AWS `ap-northeast-1`.
-- **Modeling:** C++ cycle-pricing engine, Python risk supervisor. Logistic gate on book imbalance + trade-flow intensity filters phantom edges.
-- **Performance (3mo live, Q2 2024):** Sharpe **3.1** gross · Max DD **-2.1%** · Win rate **71%** · Median fill **1.8ms**.
+### Engineering
 
-### 4. Graph Alpha — Supply-Chain Propagation of Earnings Shocks
-> *Earnings surprises diffuse along supplier-customer edges with measurable lag.*
-
-- **Hypothesis:** Negative earnings surprise at a key supplier predicts drawdowns in downstream customers 5–20 TD later, controlling for sector beta.
-- **Data & Pipeline:** Bloomberg SPLC + FactSet Revere graph (~28k nodes, ~140k edges). Revenue-weighted edges, quarterly rebuild.
-- **Modeling:** Personalized PageRank contagion score → GBM stacker with residualized momentum. Purged K-Fold, 10-day embargo.
-- **Performance (2012–2023 OOS, $-neutral L/S):** Sharpe **1.28** · Max DD **-12.7%** · |ρ| vs HML/MOM **< 0.15**.
-
----
-
-## 🔬 Research Principles
-
-- **No look-ahead, ever.** All features are point-in-time. Fundamentals lagged by filing date, not period-end. Sports features lagged by tip-off, not game-end.
-- **Purged & embargoed CV** for overlapping labels (López de Prado, *AFML* Ch. 7).
-- **Deflated Sharpe** reported for any strategy where >20 configurations were tested.
-- **Costs modeled, not assumed.** Square-root impact + venue-specific fees + realistic slippage on prop markets.
-- **Calibration ≠ accuracy.** Reliability diagrams and ECE on every probabilistic model.
-- **Signal decay is a first-class metric.** Sharpe 2.0 with 3-day half-life is not the same product as Sharpe 1.2 with 90-day half-life.
+- **Ingest queue.** SQLite-backed parallel job queue with claim-race retry, per-game
+  quality scoring, and `reset_stale_jobs.py` for pods that OOM mid-game.
+- **GPU scheduler.** `scripts/launch_single_3090_pod.sh` automates CFS quota detection,
+  OMP thread cap, decord NVDEC install, and H.264-only quarantine — taking a RunPod RTX
+  3090 from 45 fps aggregate to 80 fps without code changes to the tracker. Two sessions
+  were lost rediscovering this the hard way; the runbook is the forensic record.
+- **Reproducibility.** `scripts/reproduce.py --seed 42` + SHA256 manifest at
+  `data/release/v0.14/output_hashes.txt`. A reviewer with source videos reproduces the
+  headline table bit-exactly.
+- **960+ passing tests** across 13 complete phases. FastAPI serving 9 endpoints with
+  in-process TTL cache. Phase 14.5 (temporal CV retune) active.
 
 ---
 
-## 📬 Contact & Alpha
+## Poisson Team-Totals Framework
 
-- **Email:** [neeljshah22@gmail.com](mailto:neeljshah22@gmail.com)
-- **LinkedIn:** [linkedin.com/in/neeljshah22](https://www.linkedin.com/in/neeljshah22/)
-- **Open to:** Quant research roles (sports, systematic equity, crypto microstructure) · Alt-data sourcing conversations · Collaborations on CV-for-sports or calibrated probabilistic modeling.
+A Poisson regression baseline for NBA team totals — the model CourtVision's 75-model
+stack had to beat before CV features were allowed in.
 
+**What it does.** Pace-adjusts possession counts, fits Poisson regression on game total,
+and sizes via Sharpe-optimized fractional Kelly with per-book slippage accounting. Public
+API feeds polled on a liquidity-weighted cadence to suppress stale-line bets. Backtested
+against closing lines from a 3-book composite.
 
+**Why it matters.** It isolates the question "does the alt data actually pay" without
+confounding it with pricing engineering. Same market, same closing-line benchmark, no CV.
+The Δ R² = +0.08 that CV features deliver is measured against this baseline specifically.
+
+---
+
+## Spatial Intelligence Layer (Shot Quality Engine)
+
+A standalone court-space shot-quality engine — the geometry library underneath
+CourtVision's moat features.
+
+**What it does.**
+- SIFT homography maps broadcast frames to court coordinates
+- KDE over shot locations weighted by defender proximity and shot-clock state produces
+  zone-level xFG estimates that outperform location-only models
+- K-Means archetyping of 5-man lineup rotations detects when a team is running an
+  off-pattern defensive configuration (the precursor to `spacing_score`)
+
+**Standalone use.** Heatmap outputs diff possession quality across games without opening
+film. This is where `defender_distance` and `spacing_score` were first developed before
+integration into the full CV pipeline.
+
+---
+
+## Demand Forecasting + GenAI Ops (SunSolor, 2025)
+
+Prophet + exogenous-regressor demand forecaster on GCP, plus a GPT-4o agent over a
+dbt + BigQuery warehouse.
+
+**What it does.**
+- Prophet with exogenous regressors (weather, permits, incentive deadlines, regional
+  solar capacity) on daily residential solar install volume — **MAPE < 8%** on holdout
+- Residuals fed a nightly reforecast job; week-ahead output feeds crew scheduling
+- GPT-4o agent with SQL tools over BigQuery so ops leads query forecast drivers in
+  natural language without a BI handoff
+
+**Relevance to quant.** Prod-grade forecasting on noisy, seasonally-structured data
+with a real downstream decision (crew allocation). Same discipline as any alt-data
+signal that has to hit a business SLA: timestamped features, walk-forward validation,
+residual monitoring, downstream decision integration.
+
+---
+
+## Fortrex Securities — BI and Payments Data Engineering (2023–2024)
+
+Reporting infrastructure over a payments backend with a 99.9% uptime SLA.
+
+**What it does.**
+- Windowed z-score anomaly detection with regime-aware thresholds on live transaction streams
+- SQL optimization against 7-figure row-count tables for executive P&L dashboards
+- Reporting pipeline rebuilt for consistent attribution across multiple payment processors
+
+**Relevance.** Financial-data engineering with uptime and correctness requirements that
+match a trading desk. Taught data-quality monitoring as a first-class feature — the same
+discipline now in CourtVision's ingest queue and per-game quality scoring.
+
+---
+
+## Research Principles
+
+- **Walk-forward, purged, always.** K-fold on time-ordered data is a correctness bug. Every model here trains on `game_date < t`, evaluates on `game_date ≥ t`, with a purge window sized to the label overlap. No exceptions.
+- **Baselines first.** Every model has a cheap API-only baseline it must beat, and the delta is reported before the headline number. If the alt data doesn't move R² past the week-over-week noise band, it doesn't ship.
+- **CLV over ROI.** Realized ROI on small samples is a noisy estimator of edge. CLV against a Shin-devigged closing line is approximately unbiased and converges ~5× faster.
+- **Calibration ≠ accuracy.** Reliability diagrams and ECE on every probabilistic model. A model that is accurate but miscalibrated cannot be safely sized with Kelly.
+- **Ship the bug list.** The STL model R²=0.09 line in the CourtVision README is not humility — it's a specification of where the model must not be trusted. If I can't name what's wrong, I haven't understood it.
+- **Reproducibility is a feature.** SHA256 manifests, seeded Monte Carlo, and pinned data snapshots mean a reviewer can verify claims without trusting intermediate representations.
+- **Costs modeled, not assumed.** Kelly fractions account for slippage and vig differential. CLV is measured net of Pinnacle's margin, not gross.
+
+---
+
+## Stack
+
+| Domain | Tools |
+|--------|-------|
+| CV / tracking | YOLOv8n, OpenCV, SIFT, EasyOCR, OSNet re-ID, PyTorch, decord (NVDEC) |
+| ML | XGBoost, LightGBM, CatBoost, scikit-learn, cvxpy (QP optimizer) |
+| Calibration | Isotonic regression (cohort-segmented), conformal prediction |
+| Time-series | Prophet + exogenous regressors, walk-forward harness |
+| Data | nba_api, pandas, SQLite, PostgreSQL, dbt, BigQuery |
+| Serving | FastAPI, Next.js, D3.js, WebSocket |
+| Infra | RunPod GPU, Hetzner VPS, GitHub Actions, Docker, B2 |
+| Languages | Python 3.9 (primary), SQL, bash |
+
+---
+
+## What I'm Looking For
+
+Alt-data or sports-quant research. Seats where data engineering and modeling aren't
+siloed, because the edge in my experience is upstream of the model — in how the feature
+was extracted, cleaned, and timestamped — not in hyperparameter search. I work best when
+the question is "does this signal actually price into the market" and the answer requires
+building something non-trivial to find out.
+
+**Open to:** quant research (sports, systematic, alt-data) · alt-data sourcing · any
+context where the pipeline is as interesting as the model.
+
+📧 [neeljshah22@gmail.com](mailto:neeljshah22@gmail.com) · [linkedin.com/in/neeljshah22](https://www.linkedin.com/in/neeljshah22/) · [neelshahportfolio.netlify.app](https://neelshahportfolio.netlify.app)
