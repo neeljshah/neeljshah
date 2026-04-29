@@ -13,7 +13,7 @@
 
 ---
 
-I build end-to-end ML systems &mdash; from raw unstructured data through feature engineering, model training, calibration, and production serving. My work spans computer vision, NLP, reinforcement learning, causal inference, recommendation systems, time-series forecasting, and MLOps. Current focus: extracting spatial features from broadcast video that don't exist in any public dataset and pricing them against live sports markets.
+I build end-to-end ML systems &mdash; from raw unstructured data through feature engineering, model training, calibration, and production serving. My work spans computer vision, NLP, reinforcement learning, causal inference, recommendation systems, time-series forecasting, and MLOps. Current focus: extracting spatial features from broadcast video that don't exist in any public dataset and pricing them against live sports markets. Open to any role in ML, Computer Vision, Quantitative Researcher, and/or Sports Analytics.
 
 ---
 
