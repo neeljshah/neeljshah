@@ -4,7 +4,6 @@
 
 ### ML Engineer &middot; Computer Vision &middot; Probabilistic Modeling &middot; Sports Quant
 
-**B.S. Data Science &mdash; University of Iowa, 2026**
 
 [![Email](https://img.shields.io/badge/neeljshah22%40gmail.com-D14836?style=flat&logo=gmail&logoColor=white)](mailto:neeljshah22@gmail.com)
 [![Portfolio](https://img.shields.io/badge/portfolio-neelshahportfolio.netlify.app-000?style=flat)](https://neelshahportfolio.netlify.app)
