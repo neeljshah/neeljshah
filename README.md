@@ -8,7 +8,6 @@
 
 I build end-to-end ML systems that go from raw unstructured data to calibrated, deployable predictions. Current focus: extracting spatial features from broadcast video that don't exist in any public dataset — defender distance, off-ball spacing, fatigue signals — and routing them into live probabilistic models.
 
-University of Iowa, B.S. Data Science, 2026.
 
 ---
 
