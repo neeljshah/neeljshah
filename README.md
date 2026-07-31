@@ -11,12 +11,13 @@
 
 ---
 
-I built a multi-sport AI forecasting platform solo -- by architecting and directing
-a fleet of Claude agents through ~1,500 commits, with hard validation gates deciding
-what ships. Broadcast video in, calibrated probabilities out, every number on the
-way traceable to a receipt. Open to ML, Computer Vision, Quantitative Research, and
-Sports Analytics roles -- and to teams that want someone who can direct AI agent
-fleets that ship verified software.
+I build forecasting systems, and the validation tooling that decides whether they
+are any good. My main project takes broadcast video in and puts calibrated
+probabilities out across four sports. The part worth looking at is the harness:
+leak-guarded walk-forward validation, pre-registered claims, and an acceptance
+gate with the authority to reject my own results. It usually does.
+
+Open to ML, Computer Vision, Quantitative Research, and Sports Analytics roles.
 
 ---
 
@@ -79,28 +80,19 @@ fail-closed lint gates, append-only ledgers, binding invariant files. The patter
 (and the failure modes) are written up honestly in
 [agentic-fleet-playbook](https://github.com/neeljshah/agentic-fleet-playbook).
 
-<details>
-<summary><b>Earlier projects</b> (CV, RL, causal inference, recsys, NLP, MLOps)</summary>
+---
 
-[game-film-analyzer](https://github.com/neeljshah/game-film-analyzer) &middot;
-[sports-vision-tracker](https://github.com/neeljshah/sports-vision-tracker) &middot;
-[deep-learning-cv](https://github.com/neeljshah/deep-learning-cv) &middot;
-[calibcraft](https://github.com/neeljshah/calibcraft) &middot;
-[kellycorr](https://github.com/neeljshah/kellycorr) &middot;
-[clvtrack](https://github.com/neeljshah/clvtrack) &middot;
-[walkforge](https://github.com/neeljshah/walkforge) &middot;
-[rl-portfolio-optimizer](https://github.com/neeljshah/rl-portfolio-optimizer) &middot;
-[causal-inference-toolkit](https://github.com/neeljshah/causal-inference-toolkit) &middot;
-[recommendation-system](https://github.com/neeljshah/recommendation-system) &middot;
-[fraud-detection-engine](https://github.com/neeljshah/fraud-detection-engine) &middot;
-[market-sentiment-nlp](https://github.com/neeljshah/market-sentiment-nlp) &middot;
-[llm-bi-assistant](https://github.com/neeljshah/llm-bi-assistant) &middot;
-[sports-scout-rag](https://github.com/neeljshah/sports-scout-rag) &middot;
-[mlops-monitor](https://github.com/neeljshah/mlops-monitor) &middot;
-[mlops-pipeline](https://github.com/neeljshah/mlops-pipeline) &middot;
-[realtime-feature-platform](https://github.com/neeljshah/realtime-feature-platform)
+## Licensing
 
-</details>
+Stating this plainly because it decides whether the work is usable commercially.
+The ball detector in CourtVision fine-tunes Ultralytics YOLOv8, which is
+**AGPL-3.0**: fine for research and portfolio use, not fine inside a closed-source
+commercial product without a paid Ultralytics license. Shipping it commercially
+would mean retraining the detector on a permissively licensed backbone, which is a
+scoped swap, not a rewrite. The single-concept repos above carry no such
+constraint and are MIT.
+
+---
 
 <div align="center">
 
