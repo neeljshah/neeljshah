@@ -18,6 +18,7 @@ leak-guarded walk-forward validation, pre-registered claims, and an acceptance
 gate with the authority to reject my own results. It usually does.
 
 Open to ML, Computer Vision, Quantitative Research, and Sports Analytics roles.
+**US citizen, no sponsorship needed, available anywhere in the US or fully remote.**
 
 ---
 
