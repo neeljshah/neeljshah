@@ -27,6 +27,9 @@ Open to ML, Computer Vision, Quantitative Research, and Sports Analytics roles.
 **[court-vision](https://github.com/neeljshah/court-vision)** -- an end-to-end
 multi-sport forecasting platform (NBA, MLB, soccer, tennis).
 
+**Live analytics site: [neeljshah.github.io/court-vision/analytics](https://neeljshah.github.io/court-vision/analytics/)** --
+calibration curves with intervals, research papers with machine-checked evidence, and the retraction record.
+
 ```
 Broadcast Video -> YOLOv8n detection -> SIFT homography -> Kalman+Hungarian tracking
   -> OSNet re-ID -> OCR -> court-coordinate features that exist in no public dataset
@@ -54,7 +57,8 @@ Broadcast Video -> YOLOv8n detection -> SIFT homography -> Kalman+Hungarian trac
   carries its source artifact path, sha256, honesty label, and as-of date -- and
   a fail-closed linter blocks the bundle on edge-language or any retracted number.
 
-Start here: [`docs/JOB_EVIDENCE_PACKET.md`](https://github.com/neeljshah/court-vision/blob/master/docs/JOB_EVIDENCE_PACKET.md)
+Start here: [`EVIDENCE.md`](https://github.com/neeljshah/court-vision/blob/master/EVIDENCE.md) -- every claim with its
+number, verdict, artifact and reproduce command -- then [`docs/JOB_EVIDENCE_PACKET.md`](https://github.com/neeljshah/court-vision/blob/master/docs/JOB_EVIDENCE_PACKET.md)
 -- the adversarially-audited account of every claim, including the do-not-claim list.
 
 ---
