@@ -1,106 +1,40 @@
-<div align="center">
+# Neel Shah
 
-# Neel J. Shah
+Data analyst focused on forecasting and pricing. Based in Cedar Falls, Iowa.
 
-### ML Engineer &middot; Computer Vision &middot; Probabilistic Modeling &middot; Sports Quant
+I build calibrated pricing models and the tools that check them. My project,
+[CourtVision](https://github.com/neeljshah/court-vision), is a calibrated
+multi-sport forecasting engine covering NBA, MLB, soccer and tennis. It scores
+forecasts leak-free and walk-forward against the devigged closing line.
 
-[![Email](https://img.shields.io/badge/neeljshah22%40gmail.com-D14836?style=flat&logo=gmail&logoColor=white)](mailto:neeljshah22@gmail.com)
-[![LinkedIn](https://img.shields.io/badge/neeljshah22-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/neeljshah22/)
+On moneylines it lands near the close but never beats it; totals and tennis
+trail. The work is about calibration and honest measurement. My validation
+harness caught six of my earlier headline results as overstated, and
+[the retraction record is public](https://neeljshah.github.io/court-vision/evidence/retractions/).
+Execution is paper only; no real order has been placed.
 
-</div>
+[Evidence site](https://neeljshah.github.io/court-vision/) |
+[LinkedIn](https://www.linkedin.com/in/neeljshah22/) |
+[Email](mailto:neeljshah22@gmail.com)
 
----
+## Five single-concept repositories
 
-I build forecasting systems, and the validation tooling that decides whether they
-are any good. My main project takes broadcast video in and puts calibrated
-probabilities out across four sports. The part worth looking at is the harness:
-leak-guarded walk-forward validation, pre-registered claims, and an acceptance
-gate with the authority to reject my own results. It usually does.
+| Repository | What it isolates |
+| --- | --- |
+| [shin-devig](https://github.com/neeljshah/shin-devig) | Four methods for converting odds to fair probabilities, including Shin (1992). |
+| [calibration-gate](https://github.com/neeljshah/calibration-gate) | Calibration metrics and a recalibration gate requiring improvement on two independent corpora. |
+| [walkforward-guard](https://github.com/neeljshah/walkforward-guard) | Walk-forward splits and truncation-invariance checks for time-series leakage. |
+| [prereg-cards](https://github.com/neeljshah/prereg-cards) | Pre-registered hypothesis cards, a peek guard and mechanical verdict grading. |
+| [sdv-calibration-audit](https://github.com/neeljshah/sdv-calibration-audit) | Reproducible calibration checks for published sports-model probabilities. |
 
-Open to ML, Computer Vision, Quantitative Research, and Sports Analytics roles.
-**US citizen, no sponsorship needed, available anywhere in the US or fully remote.**
+## Experience
 
----
+- **Sunsolor - Data Analyst Intern (2025):** live Tableau and Power BI dashboards,
+  Python market-trend pipelines, data-quality audits and SQL optimization.
+- **DataAnnotation.Tech - Data Annotation Specialist (2024-2025):** structured
+  sample labeling, corner-case documentation and labeling-schema refinement.
+- **Fortrex Securities - Business Intelligence Analyst (2023-2024):** executive
+  reporting interfaces, payment APIs, reporting pipelines and anomaly alerting.
 
-## CourtVision
-
-**[court-vision](https://github.com/neeljshah/court-vision)** -- an end-to-end
-multi-sport forecasting platform (NBA, MLB, soccer, tennis).
-
-**Live analytics site: [neeljshah.github.io/court-vision/analytics](https://neeljshah.github.io/court-vision/analytics/)** --
-calibration curves with intervals, research papers with machine-checked evidence, and the retraction record.
-
-```
-Broadcast Video -> YOLOv8n detection -> SIFT homography -> Kalman+Hungarian tracking
-  -> OSNet re-ID -> OCR -> court-coordinate features that exist in no public dataset
-  -> calibrated win-prob + prop models -> possession-level Monte Carlo
-  -> walk-forward, leak-guarded validation -> receipt-backed evidence layer
-```
-
-**What makes it different is the epistemics, not the model zoo:**
-
-- **Leak-free walk-forward validation** with assertion-level per-fold guards and
-  truncation-invariance property tests -- the harness fails the build on lookahead.
-- **21,000+ pre-registered hypothesis cards**: claim, expected sign, and magnitude
-  written down *before* outcomes are looked at, then graded mechanically. The
-  large majority of graded cards are honest REJECTs -- which is what real signal
-  discovery looks like.
-- **A full-season market-efficiency result I publish instead of hiding**: my
-  calibrated models *match* the Shin-devigged closing line within noise on
-  team-strength markets across 6 independent corpora. The one measured win is
-  in-game conditioning (pregame prior fused with realized game state), labelled
-  as calibration, not a betting edge.
-- **A reject graveyard and retraction log**: 500+ candidate signals killed by the
-  gate with reasons recorded; early headline numbers that did not survive
-  adversarial re-audit are documented as retractions, not quietly deleted.
-- **A receipt system**: every headline number on the public evidence surface
-  carries its source artifact path, sha256, honesty label, and as-of date -- and
-  a fail-closed linter blocks the bundle on edge-language or any retracted number.
-
-Start here: [`EVIDENCE.md`](https://github.com/neeljshah/court-vision/blob/master/EVIDENCE.md) -- every claim with its
-number, verdict, artifact and reproduce command -- then [`docs/JOB_EVIDENCE_PACKET.md`](https://github.com/neeljshah/court-vision/blob/master/docs/JOB_EVIDENCE_PACKET.md)
--- the adversarially-audited account of every claim, including the do-not-claim list.
-
----
-
-## Single-concept repos distilled from the platform
-
-| Repo | The skill it isolates |
-|---|---|
-| [walkforward-guard](https://github.com/neeljshah/walkforward-guard) | Leak-proof time-series CV; the demo plants two real leaks and catches both |
-| [calibration-gate](https://github.com/neeljshah/calibration-gate) | Brier decomposition, ECE, PAVA/Platt recalibration + a 2-corpus acceptance gate |
-| [prereg-cards](https://github.com/neeljshah/prereg-cards) | Pre-registration workflow: peek-guarded registry, mechanical grading, honesty lint |
-| [shin-devig](https://github.com/neeljshah/shin-devig) | Four de-vig methods incl. Shin (1992) via stable bisection |
-| [kalman-hungarian-tracker](https://github.com/neeljshah/kalman-hungarian-tracker) | Multi-object tracking from primitives -- hand-rolled 6D Kalman + Hungarian assignment |
-| [agentic-fleet-playbook](https://github.com/neeljshah/agentic-fleet-playbook) | Orchestrating AI agent fleets that ship *verified* software, failure modes included |
-
----
-
-## How it was built
-
-A solo human directing a multi-model agent fleet: a frontier model decides, reviews,
-and adjudicates; mid-tier models execute in parallel against frozen contracts; small
-models scan. Hard guardrails live outside model discretion -- pre-commit hooks,
-fail-closed lint gates, append-only ledgers, binding invariant files. The patterns
-(and the failure modes) are written up honestly in
-[agentic-fleet-playbook](https://github.com/neeljshah/agentic-fleet-playbook).
-
----
-
-## Licensing
-
-Stating this plainly because it decides whether the work is usable commercially.
-The ball detector in CourtVision fine-tunes Ultralytics YOLOv8, which is
-**AGPL-3.0**: fine for research and portfolio use, not fine inside a closed-source
-commercial product without a paid Ultralytics license. Shipping it commercially
-would mean retraining the detector on a permissively licensed backbone, which is a
-scoped swap, not a rewrite. The single-concept repos above carry no such
-constraint and are MIT.
-
----
-
-<div align="center">
-
-*The market is mostly efficient. Saying so, with instruments, is the credential.*
-
-</div>
+Open to contract, part-time or full-time work. US citizen; no visa sponsorship
+needed. Open to remote work or relocation within the US.
